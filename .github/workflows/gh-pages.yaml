@@ -1,4 +1,4 @@
-name: Deploy GitHub pages with mdBook (forked)
+name: build
 
 on:
   push:
