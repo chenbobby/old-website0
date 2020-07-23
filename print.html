@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="about/index.html">bobchen.io</a></li><li class="spacer"></li><li class="chapter-item "><a href="notes-on-papers/index.html">Notes on Papers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="notes-on-papers/bigtable/index.html">Big Table: A Distributed Storage System for Structured Data</a></li></ol></li><li class="chapter-item "><a href="lab-notebook/index.html">Lab Notebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="lab-notebook/loop-optimizations/index.html">Loop Optimizations</a></li><li class="chapter-item "><a href="lab-notebook/simd/index.html">SIMD</a></li></ol></li><li class="chapter-item "><a href="references/index.html">References</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="references/data-storage-hierarchy/index.html">Data Storage Hierarchy</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+                    
+
+                    <div class="right-buttons">
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search on bobabyte..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p style="font-size: 2em;">陈子盛 <b>bobchen</b></p>
+<h2><a class="header" href="#a-hrefaboutnotes-on-papersnotes-on-papersa" id="a-hrefaboutnotes-on-papersnotes-on-papersa"><a href="about//notes-on-papers">Notes on Papers</a></a></h2>
+<p>Summaries and notes on cool papers that I've read.</p>
+<h2><a class="header" href="#a-hrefaboutlab-notebooklab-notebooka" id="a-hrefaboutlab-notebooklab-notebooka"><a href="about//lab-notebook">Lab Notebook</a></a></h2>
+<p>Results (or lack thereof) from my research projects and experiments.</p>
+<h2><a class="header" href="#a-hrefaboutreferencesreferencesa" id="a-hrefaboutreferencesreferencesa"><a href="about//references">References</a></a></h2>
+<p>Tables, documentation, and other useful data for referencing.</p>
+<h2><a class="header" href="#" id=""></a></h2>
+<hr />
+<h2><a class="header" href="#-1" id="-1"></a></h2>
+<h2><a class="header" href="#who-dis" id="who-dis"><em>who dis?</em></a></h2>
+<p>Hi! I'm Bob Chen.</p>
+<p>I'm currently on leave from Harvard, where I was studying applied mathematics and computer science.
+COVID-19 has thrown a wrench into a lot of my plans, and I don't know when I'll go back to school.
+I still have one more year until I finish my undergrad.
+However, I'm not too keen on paying <a href="https://handbook.fas.harvard.edu/book/tuition-and-fees">full tuition</a> for a year of Zoom University.</p>
+<p>So, in the meantime, I'm spending my time baking banana bread, knitting scarves, and <em>building a column-store database from scratch</em>.</p>
+<p>It's going to take a while.
+But these days, I have more than enough time on my hands.
+I'll be taking notes and publishing articles about my learnings along the way.</p>
+<p>Along with doing independent research and writing, I'm also looking for work!
+So, if you want help on a research project or need to fill a role in your team, please reach out.</p>
+<p><img src="about//images/bob.jpg"
+    alt="the face of bob"
+    style="height: 150px; border-radius: 75px; border: solid 3px white;" /></p>
+<p><strong>Email:</strong> <a href="mailto:chenbobby168@gmail.com">chenbobby168@gmail.com</a></p>
+<p><strong>GitHub:</strong> <a href="https://github.com/chenbobby">@chenbobby</a></p>
+<p><strong>Twitter:</strong> <a href="https://twitter.com/bobchen168">@bobchen168</a></p>
+<h1><a class="header" href="#notes-on-papers" id="notes-on-papers">Notes on Papers</a></h1>
+<p>Summaries and notes on cool papers that I've read.</p>
+<h4><a class="header" href="#2006" id="2006">2006</a></h4>
+<blockquote>
+<p><a href="notes-on-papers//notes-on-papers/bigtable">Big Table: A Distributed Storage System for Structured Data</a></p>
+</blockquote>
+<h1><a class="header" href="#big-table-a-distributed-storage-system-for-structured-data" id="big-table-a-distributed-storage-system-for-structured-data">Big Table: A Distributed Storage System for Structured Data</a></h1>
+<p><strong>2006</strong></p>
+<p><em>Fay Chang, Jeffrey Dean, Sanjay Ghemawat, Wilson C. Hsieh, Deborah A. Wallach, Mike Burrows, Tushar Chandra, Andrew Fikes, Robert E. Gruber</em></p>
+<h4><a class="header" href="#a-hrefnotes-on-papersbigtablepapersbigtablepdfdownload-pdfa" id="a-hrefnotes-on-papersbigtablepapersbigtablepdfdownload-pdfa"><a href="notes-on-papers/bigtable//papers/bigtable.pdf">Download PDF</a></a></h4>
+<h2><a class="header" href="#summary" id="summary">Summary</a></h2>
+<p>Description of </p>
+<h2><a class="header" href="#notes" id="notes">Notes</a></h2>
+<h1><a class="header" href="#lab-notebook" id="lab-notebook">Lab Notebook</a></h1>
+<p>Results (or lack thereof) from my research projects and experiments.</p>
+<ul>
+<li><a href="lab-notebook//lab-notebook/loop-optimizations">Loop Optimizations</a></li>
+<li><a href="lab-notebook//lab-notebook/simd">SIMD</a></li>
+</ul>
+<h1><a class="header" href="#loop-optimizations" id="loop-optimizations">Loop Optimizations</a></h1>
+<h1><a class="header" href="#simd" id="simd">SIMD</a></h1>
+<h1><a class="header" href="#references" id="references">References</a></h1>
+<p>References are packed with concise information and links to related readings.</p>
+<ul>
+<li><a href="references//references/data-storage-hierarchy">Data Storage Hierarchy</a></li>
+</ul>
+<h1><a class="header" href="#data-storage-hierarchy" id="data-storage-hierarchy">Data Storage Hierarchy</a></h1>
+<table><thead><tr><th>Storage Type</th><th>Speed</th><th>Capacity</th></tr></thead><tbody>
+<tr><td>CPU Register</td><td>1 ms</td><td>8 bytes</td></tr>
+<tr><td>CPU L1-L3 Cache</td><td>10 ms</td><td>64 bytes</td></tr>
+<tr><td>Main Memory</td><td>100 ms</td><td>1,000,000,000 bytes</td></tr>
+<tr><td>Disk</td><td>1000 ms</td><td>100 TB</td></tr>
+</tbody></table>
+<h3><a class="header" href="#further-reading" id="further-reading">Further Reading</a></h3>
+<ul>
+<li><a href="https://thessdguy.com/the-memory-storage-hierarchy/">Jim Handy (The SSD Guy), <em>The Memory/Storage Hierarchy</em></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Memory_hierarchy">Wikipedia, <em>Memory Hierarchy</em></a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
