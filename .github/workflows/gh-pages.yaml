@@ -1,23 +1,23 @@
-name: Deploy GitHub Pages (Forked mdBook)
+name: Deploy GitHub pages with mdBook (forked)
 
 on:
-	push:
-		branches:
-			- main
+  push:
+    branches:
+      - master
 
 jobs:
-	deploy:
-		runs-on: ubuntu-18.04
-		steps:
-			- uses: actions/checkout@v2
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
 
-			- name: Setup mdBook
-				uses: chenbobby/actions-mdbook@v1
-		
-			- run: mdbook build
+      - name: Setup mdBook
+        uses: chenbobby/actions-mdbook@v1
+    
+      - run: mdbook build
 
-			- name: Deploy static website
-				uses: peaceiris/actions-gh-pages@v3
-				with:
-					github_token: ${{ secrets.GITHUB_TOKEN }}
-					publish_dir: ./book
+      - name: Deploy static website
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book
