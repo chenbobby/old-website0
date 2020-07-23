@@ -1,0 +1,16 @@
+[book]
+authors = ["Bob Chen"]
+baseurl = "https://bobchen.io"
+language = "en"
+multilingual = false
+src = "src"
+
+[output]
+    [output.html]
+        default-theme = "rust"
+        mathjax-support = true
+        no-section-label = true
+        [output.html.fold]
+            enable = true
+        [output.html.playpen]
+            editable = false
